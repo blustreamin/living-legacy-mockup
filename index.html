@@ -200,7 +200,53 @@ body { font-family: 'Jost', sans-serif; color: var(--text-dark); background: #ff
 .footer-links a { font-size: 11px; color: rgba(255,255,255,0.3); text-decoration: none; }
 .footer-links a:hover { color: rgba(196,157,68,0.6); }
 
-/* ── RESPONSIVE ── */
+/* ── INTRO BODY (doc Section 2) ── */
+.intro-body { padding: 64px 60px; background: #fff; border-bottom: 1px solid var(--border); }
+.ib-inner { max-width: 820px; margin: 0 auto; }
+.ib-inner p { font-size: 15px; color: #444; line-height: 1.85; margin-bottom: 18px; font-weight: 300; }
+.ib-inner p a { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
+.ib-inner p a:hover { color: var(--gold-muted); }
+.ib-subhead { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 400; color: var(--navy); margin: 28px 0 14px; font-style: italic; }
+.ib-subhead::before { content: ''; display: inline-block; width: 28px; height: 1px; background: var(--gold); vertical-align: middle; margin-right: 12px; margin-bottom: 4px; }
+
+/* ── US RESIDENTS BUTTON ── */
+.ways-us-cta { margin-bottom: 32px; }
+.us-btn { display: inline-block; background: var(--navy); color: var(--gold); font-size: 12px; font-weight: 600; padding: 12px 26px; border-radius: 2px; text-decoration: none; letter-spacing: 0.3px; }
+.us-btn:hover { background: #0f2550; }
+
+/* ── CTA tweaks ── */
+.cta-section h2 { margin-top: 8px; }
+.cta-section .cta-body { font-size: 14px; color: #555; line-height: 1.75; margin-top: 14px; max-width: 480px; }
+.cta-section .cta-body em { font-style: italic; color: var(--navy); }
+
+/* ── LEAD FORM ── */
+.lead-section { background: var(--parchment-mid); padding: 64px 60px; border-top: 1px solid var(--border); }
+.lead-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 56px; max-width: 1200px; margin: 0 auto; align-items: start; }
+.lead-intro .lead-blurb { font-size: 14px; color: #555; line-height: 1.75; margin-top: 14px; }
+.lead-intro .lead-privacy { font-size: 12px; color: #888; margin-top: 16px; }
+.lead-form-wrap { background: #fff; border: 1px solid var(--border); padding: 32px; }
+.lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field-full { grid-column: 1 / -1; }
+.field label { font-size: 11px; font-weight: 600; color: var(--navy); letter-spacing: 0.3px; text-transform: uppercase; }
+.field label .req { color: var(--gold); }
+.field label .opt { color: #aaa; font-weight: 400; text-transform: none; letter-spacing: 0; }
+.field input, .field select, .field textarea {
+  font-family: 'Jost', sans-serif; font-size: 13px; color: var(--text-dark);
+  border: 1px solid var(--border); background: var(--parchment-mid);
+  padding: 10px 12px; border-radius: 2px; outline: none;
+}
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--gold); background: #fff; }
+.field select { padding: 6px; }
+.field .hint { font-size: 10px; color: #aaa; margin-top: 2px; font-style: italic; }
+.lead-submit {
+  margin-top: 24px; background: var(--navy); color: #fff; border: none;
+  font-family: 'Jost', sans-serif; font-size: 13px; font-weight: 600;
+  padding: 14px 32px; border-radius: 2px; cursor: pointer; letter-spacing: 0.3px;
+}
+.lead-submit:hover { background: #0f2550; }
+
+
 @media (max-width: 960px) {
   .nav { padding: 0 20px; }
   .nav-links { display: none; }
@@ -227,6 +273,12 @@ body { font-family: 'Jost', sans-serif; color: var(--text-dark); background: #ff
   .faq-section { padding: 48px 20px; }
   .faq-cols { grid-template-columns: 1fr; gap: 0; }
   .cta-section { padding: 48px 20px; flex-direction: column; align-items: flex-start; }
+  .intro-body { padding: 48px 20px; }
+  .ib-inner p { font-size: 14px; }
+  .lead-section { padding: 48px 20px; }
+  .lead-inner { grid-template-columns: 1fr; gap: 32px; }
+  .lead-form-wrap { padding: 24px; }
+  .lead-grid { grid-template-columns: 1fr; }
   .site-footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
 }
 </style>
@@ -265,9 +317,9 @@ body { font-family: 'Jost', sans-serif; color: var(--text-dark); background: #ff
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <span class="hero-eyebrow">IIT Bombay · Living Legacy Programme</span>
-    <h1>A gift that reaches<br>minds you may<br><em>never meet.</em></h1>
-    <p>Designate IIT Bombay in your will, trust or estate plan — and extend the arc of your own journey into the future.</p>
-    <a href="mailto:livinglegacy@iitbacr.com" class="hero-btn">Begin your legacy →</a>
+    <h1>A journey that<br><em>transcends time.</em></h1>
+    <p>A Living Legacy is a deeply personal expression of gratitude and belief — in the transformative power of education, research and innovation, and in IIT Bombay's enduring role in shaping thinkers, innovators and nation-builders.</p>
+    <a href="#begin" class="hero-btn">Begin your legacy →</a>
   </div>
 </section>
 
@@ -297,17 +349,30 @@ body { font-family: 'Jost', sans-serif; color: var(--text-dark); background: #ff
   </div>
 </section>
 
+<!-- INTRO BODY COPY (from doc Section 2) -->
+<section class="intro-body">
+  <div class="ib-inner">
+    <p>A Living Legacy is a deeply personal expression of gratitude and belief. Belief in the transformative power of education, research and innovation, expanding opportunity and IIT Bombay's enduring role in shaping thinkers, innovators and nation-builders.</p>
+    <p>Known globally as bequests or planned giving, the IIT Bombay Living Legacy Programme enables you to designate IIT Bombay and/or the <a href="https://www.iitbombay.org/page/living-legacy-program" target="_blank" rel="noopener">IIT Bombay Heritage Foundation (IITBHF)</a> as a beneficiary in your will, trust, estate plan, and more. It is also designed to maximise the impact of your legacy, often with significant tax advantages.</p>
+    <h3 class="ib-subhead">Your Legacy In Action</h3>
+    <p>IIT Bombay is where India's brightest minds are nurtured, and its most defining ideas take shape. It drives critical research, launches enterprises of global consequence, and advances urgent frontiers like climate science, artificial intelligence, and public health, to name a few. This work is purposeful, pressing, and scaling towards boundless impact. Your legacy ensures the research continues, the questions keep being asked, and the breakthroughs the world needs are never held back.</p>
+  </div>
+</section>
+
 <!-- WAYS OF GIVING -->
 <section class="ways-section">
   <span class="sec-eyebrow">Ways of giving</span>
   <div class="sec-heading">Five ways to shape the future</div>
-  <p class="ways-intro">You may name IIT Bombay or the IIT Bombay Heritage Foundation as a beneficiary through any of the following instruments. No gift is too large. No gift is too modest.</p>
+  <p class="ways-intro">No gift is too large. No gift is too modest. Our dedicated team is happy to facilitate the process and make giving easier.</p>
+  <div class="ways-us-cta">
+    <a href="https://www.iitbombay.org/page/living-legacy-program" target="_blank" rel="noopener" class="us-btn">More information for US residents →</a>
+  </div>
   <div class="ways-grid">
-    <div class="way-card"><span class="way-num">01</span><h3>Bequest in your Will</h3><p>Name IITB or IITBHF directly in your will or estate plan.</p><a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="way-link">Learn more →</a></div>
-    <div class="way-card"><span class="way-num">02</span><h3>Trust / Estate Plan</h3><p>Designate IITB through a revocable living trust or estate arrangement.</p><a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="way-link">Learn more →</a></div>
-    <div class="way-card"><span class="way-num">03</span><h3>IRA / Retirement Account</h3><p>Name IITB via Qualified Charitable Distribution where applicable.</p><a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="way-link">Learn more →</a></div>
-    <div class="way-card"><span class="way-num">04</span><h3>Life Insurance Policy</h3><p>Designate as full or partial beneficiary of a life insurance policy.</p><a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="way-link">Learn more →</a></div>
-    <div class="way-card"><span class="way-num">05</span><h3>Retirement Account</h3><p>Name IIT Bombay as beneficiary of your pension or retirement fund.</p><a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="way-link">Learn more →</a></div>
+    <div class="way-card"><span class="way-num">01</span><h3>Provision in your Will (Bequest)</h3><p>Include IIT Bombay in your will and let your values shape generations to come.</p><a href="#sample-language" class="way-link">Sample language →</a></div>
+    <div class="way-card"><span class="way-num">02</span><h3>Trust / Estate Plan</h3><p>Designate IITB through a revocable living trust or estate arrangement.</p><a href="#begin" class="way-link">Learn more →</a></div>
+    <div class="way-card"><span class="way-num">03</span><h3>IRA Account</h3><p>Designate IITBHF as your IRA beneficiary — a tax-smart way to leave a meaningful legacy. (Via Qualified Charitable Distribution, where applicable.)</p><a href="#begin" class="way-link">Learn more →</a></div>
+    <div class="way-card"><span class="way-num">04</span><h3>Life Insurance Beneficiary</h3><p>Name IITBHF as your life insurance beneficiary — a simple gesture that creates a significant, lasting impact.</p><a href="#begin" class="way-link">Learn more →</a></div>
+    <div class="way-card"><span class="way-num">05</span><h3>Retirement Account Beneficiary</h3><p>Name IIT Bombay as beneficiary of your pension or retirement fund.</p><a href="#begin" class="way-link">Learn more →</a></div>
   </div>
 </section>
 
@@ -345,14 +410,12 @@ body { font-family: 'Jost', sans-serif; color: var(--text-dark); background: #ff
 <div class="two-col">
   <div class="tc-text">
     <span class="sec-eyebrow">Your legacy in action</span>
-    <div class="sec-heading">Breakthroughs the world needs, never held back.</div>
-    <p>IIT Bombay drives critical research, launches enterprises of global consequence, and advances urgent frontiers like climate science, artificial intelligence, and public health.</p>
-    <p>Your legacy ensures the research continues, the questions keep being asked, and the next generation of thinkers has the support they need.</p>
+    <div class="sec-heading">What a planned gift allows you to do</div>
+    <p>A planned gift gives you the freedom to support what matters most to you, while creating impact that lasts well beyond your lifetime.</p>
     <div class="bullet-list">
-      <div class="bullet-row"><div class="bullet-dot"></div><span>Scholarships for the next generation of innovators</span></div>
-      <div class="bullet-row"><div class="bullet-dot"></div><span>Fund research on urgent global challenges</span></div>
-      <div class="bullet-row"><div class="bullet-dot"></div><span>Strengthen infrastructure and student welfare on campus</span></div>
-      <div class="bullet-row"><div class="bullet-dot"></div><span>Leave your gift unrestricted for greatest impact</span></div>
+      <div class="bullet-row"><div class="bullet-dot"></div><span>Support IIT Bombay's long-term institutional priorities or select a cause close to your heart</span></div>
+      <div class="bullet-row"><div class="bullet-dot"></div><span>Create a sustained funding base for research, scholarships and innovation</span></div>
+      <div class="bullet-row"><div class="bullet-dot"></div><span>Make a meaningful impact that extends well beyond your lifetime</span></div>
     </div>
   </div>
   <!-- IMAGE NOTE: Replace .tc-image background with director portrait or campus photo (recommended: 800×800px) -->
@@ -362,18 +425,18 @@ body { font-family: 'Jost', sans-serif; color: var(--text-dark); background: #ff
 </div>
 
 <!-- SAMPLE BEQUEST LANGUAGE -->
-<section class="lang-section">
-  <span class="sec-eyebrow">Sample bequest language</span>
+<section class="lang-section" id="sample-language">
+  <span class="sec-eyebrow">Sample language for your will or estate plan</span>
   <div class="sec-heading">Words to guide your advisor conversation</div>
-  <p class="lang-note">For guidance only — not intended as legal, financial or tax advice. Please consult your attorney.</p>
+  <p class="lang-note">If you choose to include IIT Bombay in your plans, the following sample language can help guide your conversation with your legal advisor. The information below is not intended as legal, financial, or tax advice. We encourage you to discuss these options with your attorney.</p>
   <div class="lang-grid">
     <div class="lang-box">
       <span class="lb-tag">For US donors</span>
-      <p>"I give [all of the residue of my estate / an amount equal to X% / USD ___________] to IIT Bombay through IIT Bombay Heritage Foundation, a qualified 501(c)(3) nonprofit organization registered in the State of California, Tax ID 77-0428724, for its general educational and research purposes."</p>
+      <p>"I give [an amount equal to X% of the residue of my estate / thereof OR USD ___________ ] to IIT Bombay through IIT Bombay Heritage Foundation, a qualified 501(c)(3) nonprofit organization registered in the State of California, Tax ID 77-0428724, for its general educational and research purposes."</p>
     </div>
     <div class="lang-box">
       <span class="lb-tag">For India donors</span>
-      <p>"I give [all of the residue of my estate / an amount equal to X% / INR ___________] to IIT Bombay, for its general educational and research purposes."</p>
+      <p>"I give [an amount equal to X% of the residue of my estate / thereof OR INR ___________ ] to IIT Bombay, for its general educational and research purposes."</p>
     </div>
   </div>
 </section>
@@ -382,55 +445,51 @@ body { font-family: 'Jost', sans-serif; color: var(--text-dark); background: #ff
 <section class="recog-section">
   <span class="sec-eyebrow">Recognition &amp; stewardship</span>
   <div class="sec-heading">Your legacy, honoured.</div>
-  <p class="recog-intro">As a Living Legacy donor, you will be recognised and celebrated by IIT Bombay. Below are placeholder examples of how donors are featured — your story and photo will be showcased in a similar way.</p>
+  <p class="recog-intro">As a Living Legacy donor, you will be recognised and celebrated by IIT Bombay. Donor profiles below are placeholders pending images and stories shortlisted by Aishwarya and Divya.</p>
   <div class="recog-layout">
     <div class="recog-cards">
-      <!-- IMAGE NOTE: Replace .img-card-photo background with donor portrait (recommended: 120×150px, portrait orientation) -->
+      <!-- IMAGE NOTE: Donor portrait — Aishwarya/Divya to share. Recommended 300×400px portrait. -->
       <div class="img-card">
         <div class="img-card-photo">
-          <!-- background: url('donor-1-photo.jpg') center/cover no-repeat; -->
-          <div class="photo-label">Donor photo<br>300×400px</div>
+          <div class="photo-label">Donor photo<br>to be added</div>
         </div>
         <div class="img-card-body">
           <div>
-            <h3>Legacy Donor Name</h3>
-            <p>A brief description of the donor's connection to IIT Bombay and the lasting impact of their planned gift on the institute's future generations.</p>
+            <h3>Donor name</h3>
+            <p>Donor story and connection to IIT Bombay — to be shortlisted and shared by the team.</p>
             <div class="img-card-meta">
-              <span>B. Tech. · 1985</span>
-              <span>Electrical Engineering</span>
+              <span>Batch · Year</span>
+              <span>Department</span>
             </div>
           </div>
-          <a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="img-card-link">Read More →</a>
+          <a href="#begin" class="img-card-link">Read More →</a>
         </div>
       </div>
       <div class="img-card">
         <div class="img-card-photo">
-          <!-- background: url('donor-2-photo.jpg') center/cover no-repeat; -->
-          <div class="photo-label">Donor photo<br>300×400px</div>
+          <div class="photo-label">Donor photo<br>to be added</div>
         </div>
         <div class="img-card-body">
           <div>
-            <h3>Legacy Donor Name</h3>
-            <p>A brief description of the donor's connection to IIT Bombay and the enduring impact their bequest will create for future innovators and researchers.</p>
+            <h3>Donor name</h3>
+            <p>Donor story and connection to IIT Bombay — to be shortlisted and shared by the team.</p>
             <div class="img-card-meta">
-              <span>M. Tech. · 1992</span>
-              <span>Computer Science &amp; Engineering</span>
+              <span>Batch · Year</span>
+              <span>Department</span>
             </div>
           </div>
-          <a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="img-card-link">Read More →</a>
+          <a href="#begin" class="img-card-link">Read More →</a>
         </div>
       </div>
     </div>
     <div class="recog-right">
       <div class="recog-points">
-        <div class="rp-item"><div class="rp-dot"></div><span>Acknowledged through appropriate Institute platforms within the IIT Bombay community, with your consent</span></div>
-        <div class="rp-item"><div class="rp-dot"></div><span>Naming opportunities for chairs, programmes, labs or facilities considered based on realised gift value</span></div>
-        <div class="rp-item"><div class="rp-dot"></div><span>Donor intent upheld with strong governance and long-term stewardship frameworks</span></div>
-        <div class="rp-item"><div class="rp-dot"></div><span>Regular updates and full transparency on how your funds are directed and used</span></div>
+        <div class="rp-item"><div class="rp-dot"></div><span>Acknowledged through relevant Institute policies, with your consent</span></div>
+        <div class="rp-item"><div class="rp-dot"></div><span>Considered for naming opportunities based on the realised value of your contribution</span></div>
       </div>
       <div class="heritage-bar">
-        <p><strong>Heritage Circle:</strong> Upon joining, you will be welcomed as a member of IIT Bombay's Heritage Circle.</p>
-        <a href="mailto:livinglegacy@iitbacr.com" class="heritage-btn">Join Heritage Circle</a>
+        <p><strong>Heritage Circle:</strong> Upon joining the IIT Bombay Living Legacy Programme, you will be welcomed as a member of IIT Bombay's Heritage Circle.</p>
+        <a href="#begin" class="heritage-btn">Join Heritage Circle</a>
       </div>
     </div>
   </div>
@@ -443,55 +502,109 @@ body { font-family: 'Jost', sans-serif; color: var(--text-dark); background: #ff
   <div class="faq-cols">
     <div>
       <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Is there a minimum legacy gift amount?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
-        <div class="faq-body"><p>There is no minimum amount. Every legacy gift, regardless of size, contributes meaningfully to IIT Bombay's long-term future.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Can I keep my intention confidential?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
-        <div class="faq-body"><p>Absolutely. If you prefer, your bequest can remain entirely confidential. We will respect your wishes regarding recognition and privacy completely.</p></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Can I revise my bequest in the future?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
-        <div class="faq-body"><p>Yes. A bequest is revocable and can be modified at any time by simply updating your will.</p></div>
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Can I speak to someone before making a decision?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>Yes. Our team would be happy to have a confidential conversation to understand your interests and guide you through the options available.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Do I need legal assistance to include a bequest?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
-        <div class="faq-body"><p>We recommend working with a legal advisor to ensure your bequest reflects your intentions clearly and accurately.</p></div>
+        <div class="faq-body"><p>Yes. We recommend working with a legal advisor to include a bequest in your will and ensure it reflects your intentions clearly.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Is there a minimum legacy amount?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>There is no minimum amount. Every legacy gift, regardless of size, contributes meaningfully to IIT Bombay's long-term future.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">What types of assets can I include in my bequest?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>You may choose to leave a gift in the form of cash, securities, property, or other assets. We recommend discussing your plans with your advisor to determine what works best for you.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Can I specify how my gift is used?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>Yes. You may choose to support an area that is meaningful to you, such as scholarships, research, hostels, or infrastructure. Our team would be happy to work with you to ensure your gift reflects your intentions.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Can I revise my bequest in the future?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>Yes. A bequest is revocable and can be modified at any time by updating your will.</p></div>
       </div>
     </div>
     <div>
       <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">What types of assets can I include?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
-        <div class="faq-body"><p>Cash, securities, property or other assets. We recommend discussing your plans with your advisor to determine what works best for your situation.</p></div>
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">What happens if my chosen area of support changes in the future?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>If your specified area of support changes, IIT Bombay will ensure that your gift is directed to a closely aligned purpose, in keeping with your original intent.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Can I specify how my gift is used?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
-        <div class="faq-body"><p>Yes — scholarships, research, hostels, infrastructure, or leave it unrestricted. Our team will work with you to align the gift with your stated intentions.</p></div>
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Can I keep my intention confidential?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>Absolutely. If you prefer, your bequest can remain entirely confidential. We will respect your wishes regarding recognition and privacy.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">How does tax treatment work?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
-        <div class="faq-body"><p>Tax benefits depend on your country of residence. We recommend consulting your legal or financial advisor for guidance specific to your situation.</p></div>
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Do I need to inform IIT Bombay now?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>There is no obligation to inform us if you have chosen to include a gift to us in your will.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Can I speak to someone before deciding?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
-        <div class="faq-body"><p>Yes. Our team would be happy to have a confidential conversation — no obligation, your timeline, your terms entirely.</p></div>
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Who ensures that my intentions are honoured in the long term?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>IIT Bombay is committed to upholding donor intent with strong governance and long-term stewardship.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Will there be transparency on how funds are used?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>Yes. We are committed to transparency and can share updates on the areas you choose to support.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">How does the tax treatment work?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>Tax benefits depend on your country of residence and applicable laws. We recommend consulting your legal or financial advisor to understand how a bequest to IIT Bombay may be treated.</p></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA FOOTER -->
-<section class="cta-section">
+<section class="cta-section" id="begin">
   <div>
-    <h2>All conversations are <em>strictly confidential.</em><br>No obligation. Your timeline, your terms.</h2>
+    <span class="sec-eyebrow" style="color: var(--gold-muted);">Begin your legacy conversation</span>
+    <h2>Estate planning is among the most personal decisions you will <em>ever make.</em></h2>
+    <p class="cta-body">Our team is here, alongside your own advisors, to help you shape a plan that is entirely yours. <em>All conversations are strictly confidential. No obligation. Your timeline, your terms.</em></p>
     <p class="cta-contact">
       <a href="mailto:livinglegacy@iitbacr.com">livinglegacy@iitbacr.com</a> &nbsp;·&nbsp;
       <a href="mailto:hfoffice-group@iitbombay.org">hfoffice-group@iitbombay.org</a>
     </p>
   </div>
   <div class="cta-btns">
-    <a href="mailto:livinglegacy@iitbacr.com" class="btn-navy">Contact our team</a>
-    <a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="btn-gold-outline">Download brochure</a>
+    <a href="#lead-form" class="btn-navy">Contact our team</a>
+    <a href="https://www.iitbombay.org/page/living-legacy-program" target="_blank" rel="noopener" class="btn-gold-outline">More information for US residents →</a>
+    <a href="#" class="btn-gold-outline">Download brochure (coming soon)</a>
+  </div>
+</section>
+
+<!-- LEAD FORM -->
+<section class="lead-section" id="lead-form">
+  <div class="lead-inner">
+    <div class="lead-intro">
+      <span class="sec-eyebrow">Begin your legacy conversation</span>
+      <div class="sec-heading">Tell us a little about yourself.</div>
+      <p class="lead-blurb">No gift is too large. No gift is too modest. Our dedicated team is happy to facilitate the process and make giving easier.</p>
+      <p class="lead-privacy"><em>Your privacy matters to us. This form is strictly confidential and non-binding.</em></p>
+    </div>
+    <div class="lead-form-wrap">
+      <div class="lead-grid">
+        <div class="field"><label>Name <span class="req">*</span></label><input type="text" placeholder="Your full name"></div>
+        <div class="field"><label>Email Address <span class="req">*</span></label><input type="email" placeholder="you@example.com"></div>
+        <div class="field"><label>Preferred Contact No. <span class="req">*</span></label><input type="tel" placeholder="+91 ..."></div>
+        <div class="field"><label>City <span class="req">*</span></label><input type="text" placeholder="City"></div>
+        <div class="field"><label>Country <span class="req">*</span></label><input type="text" placeholder="Country"></div>
+        <div class="field"><label>Graduation Batch <span class="opt">(if IITB Alum)</span></label><input type="text" placeholder="e.g. B.Tech 1992"></div>
+        <div class="field field-full"><label>Please send me information on <span class="req">*</span></label>
+          <select multiple size="5">
+            <option>How to include IITB HF in my will</option>
+            <option>How to name IIT Bombay Heritage Foundation as a beneficiary to my IRA</option>
+            <option>QCD through my IRA</option>
+            <option>Adding a beneficiary to my Life Insurance Policy</option>
+            <option>Any other (please add details below)</option>
+          </select>
+          <span class="hint">Hold Cmd/Ctrl to select multiple</span>
+        </div>
+        <div class="field field-full"><label>Any other details</label><textarea rows="3" placeholder="Tell us anything else relevant"></textarea></div>
+        <div class="field field-full"><label>How did you hear about us?</label><input type="text" placeholder="Optional"></div>
+      </div>
+      <button type="button" class="lead-submit">Submit enquiry</button>
+    </div>
   </div>
 </section>
 
@@ -503,7 +616,7 @@ body { font-family: 'Jost', sans-serif; color: var(--text-dark); background: #ff
     <a href="https://acr.iitbombay.org/ways-of-giving/">Ways of Giving</a>
     <a href="https://acr.iitbombay.org/donor-wall/">Donor Wall</a>
     <a href="https://acr.iitbombay.org/chairmans-circle/">Chairman's Circle</a>
-    <a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#">Contact Us</a>
+    <a href="#begin">Contact Us</a>
   </div>
 </footer>
 
