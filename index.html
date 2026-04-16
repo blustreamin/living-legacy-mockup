@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!-- Living Legacy Programme — IIT Bombay | Option A: Gold & Navy -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Living Legacy Programme — IIT Bombay | Option A: Gold &amp; Navy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./assets/fonts.css" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #0d1f4a;
+  --navy-dark: #081330;
+  --gold: #c49d44;
+  --gold-muted: #8a7040;
+  --parchment: #f7f4ed;
+  --parchment-mid: #fdfbf6;
+  --border: #e0d9c8;
+  --text-dark: #1a2744;
+  --text-mid: #3d4f6b;
+  --text-light: #5a6a85;
+}
+body { font-family: 'Jost', sans-serif; color: var(--text-dark); background: #fff; -webkit-font-smoothing: antialiased; }
+
+/* ── NAV ── */
+.nav { background: #fff; border-bottom: 1px solid #e8e8e8; padding: 0 60px; display: flex; align-items: center; justify-content: space-between; height: 64px; position: sticky; top: 0; z-index: 100; }
+.nav-brand { display: flex; align-items: center; gap: 10px; }
+.nav-brand img { height: 38px; width: auto; }
+.nav-brand-text { font-size: 11px; font-weight: 600; color: var(--navy); line-height: 1.3; }
+.nav-brand-text span { display: block; font-weight: 300; color: #888; font-size: 10px; margin-top: 1px; }
+.nav-links { display: flex; gap: 22px; }
+.nav-links a { font-size: 12px; color: #444; text-decoration: none; font-weight: 400; }
+.nav-links a:hover { color: var(--gold); }
+.nav-give { background: var(--gold); color: var(--navy); font-size: 12px; font-weight: 600; padding: 9px 22px; border-radius: 2px; text-decoration: none; letter-spacing: 0.3px; white-space: nowrap; }
+.nav-give:hover { background: #d4b265; }
+
+/* ── BREADCRUMB ── */
+.breadcrumb { background: var(--parchment-mid); border-bottom: 1px solid var(--border); padding: 9px 60px; font-size: 11px; color: #999; }
+.breadcrumb a { color: var(--gold); text-decoration: none; }
+
+/* ── HERO ── */
+.hero { position: relative; height: 520px; overflow: hidden; display: flex; align-items: flex-end; }
+.hero-bg {
+  position: absolute; inset: 0;
+  background: url('https://acr.iitbombay.org/wp-content/uploads/2022/12/1600x640_Giving-Back-Banner-scaled.webp') center/cover no-repeat;
+}
+/* swap above URL with your campus hero image */
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,16,40,0.93) 0%, rgba(8,16,40,0.45) 55%, rgba(8,16,40,0.08) 100%); }
+.hero-content { position: relative; z-index: 2; padding: 0 60px 64px; width: 100%; }
+.hero-eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 16px; display: block; }
+.hero-content h1 { font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 300; color: #fff; line-height: 1.1; margin-bottom: 18px; max-width: 600px; letter-spacing: -0.5px; }
+.hero-content h1 em { font-style: italic; color: var(--gold); }
+.hero-content p { font-size: 16px; font-weight: 300; color: rgba(255,255,255,0.82); max-width: 460px; line-height: 1.75; margin-bottom: 28px; }
+.hero-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--gold); color: var(--navy); font-size: 13px; font-weight: 600; padding: 14px 30px; border-radius: 2px; text-decoration: none; letter-spacing: 0.3px; }
+.hero-btn:hover { background: #d4b265; }
+
+/* ── STATS STRIP ── */
+.stats-strip { background: #fff; padding: 40px 60px; display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--border); }
+.stats-left { border-right: 1px solid var(--border); padding-right: 60px; display: flex; flex-direction: column; justify-content: center; }
+.stats-left h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--navy); margin-bottom: 6px; }
+.stats-left h3 em { font-style: italic; color: var(--gold); }
+.stats-left p { font-size: 13px; color: #aaa; }
+.stats-right { padding-left: 60px; display: grid; grid-template-columns: 1fr 1fr; }
+.stat-item { padding: 14px 16px; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); display: flex; align-items: center; gap: 14px; }
+.stat-item:nth-child(even) { border-right: none; }
+.stat-item:nth-last-child(-n+2) { border-bottom: none; }
+.stat-num { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 400; color: var(--gold); }
+.stat-label { font-size: 12px; color: #888; line-height: 1.4; }
+
+/* ── DIRECTOR QUOTE ── */
+.quote-band { display: grid; grid-template-columns: 220px 1fr; }
+.quote-left { background: var(--gold); padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+.quote-left .ql-label { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--navy); font-weight: 600; margin-bottom: 10px; opacity: 0.7; }
+.quote-left .ql-name { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 400; color: var(--navy); line-height: 1.3; }
+.quote-left .ql-title { font-size: 11px; color: rgba(13,31,74,0.6); margin-top: 6px; line-height: 1.5; }
+.quote-right { background: var(--navy); padding: 48px 60px; display: flex; align-items: center; }
+.quote-right blockquote { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-style: italic; font-weight: 300; color: rgba(255,255,255,0.92); line-height: 1.78; }
+
+/* ── SHARED SECTION ── */
+.section { padding: 64px 60px; }
+.sec-eyebrow { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 500; margin-bottom: 10px; display: block; }
+.sec-heading { font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 300; color: var(--navy); margin-bottom: 12px; line-height: 1.25; }
+
+/* ── WAYS OF GIVING ── */
+.ways-section { padding: 64px 60px; background: var(--parchment-mid); }
+.ways-intro { font-size: 14px; font-weight: 300; color: #666; line-height: 1.75; max-width: 600px; margin-bottom: 40px; }
+.ways-grid { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--border); }
+.way-card { padding: 28px 20px; border-right: 1px solid var(--border); background: #fff; border-top: 3px solid transparent; transition: border-top-color 0.2s, background 0.2s; }
+.way-card:hover { border-top-color: var(--gold); background: var(--parchment-mid); }
+.way-card:last-child { border-right: none; }
+.way-num { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: #e0d9c8; line-height: 1; margin-bottom: 12px; display: block; }
+.way-card h3 { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 6px; line-height: 1.4; }
+.way-card p { font-size: 12px; color: #888; line-height: 1.65; }
+.way-link { display: inline-block; margin-top: 10px; font-size: 11px; color: var(--gold); font-weight: 600; text-decoration: none; }
+
+/* ── IMAGE MOSAIC ── */
+.img-mosaic { display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 190px 190px; gap: 3px; }
+.mosaic-cell { position: relative; overflow: hidden; display: flex; align-items: flex-end; }
+.mosaic-cell.tall { grid-row: 1 / 3; }
+/* Replace background of each .mosaic-cell with your campus photo urls */
+.mosaic-cell.c1 { background: linear-gradient(135deg,#081330,#1a4a7a); }
+.mosaic-cell.c2 { background: linear-gradient(135deg,#0d2040,#163870); }
+.mosaic-cell.c3 { background: linear-gradient(135deg,#0a1c38,#143268); }
+.mosaic-cell.c4 { background: linear-gradient(135deg,#0c1e3a,#183470); }
+.mosaic-cell.c5 { background: linear-gradient(135deg,#091828,#122a50); }
+/* Example replacement: .mosaic-cell.c1 { background: url('campus-aerial.jpg') center/cover no-repeat; } */
+.mosaic-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,16,40,0.75) 0%, transparent 60%); }
+.mosaic-label { position: relative; z-index: 2; padding: 10px 14px; font-size: 10px; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(255,255,255,0.78); font-weight: 500; }
+
+/* ── PURPOSE + IMAGE ── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; }
+.tc-text { padding: 64px 60px; }
+.tc-text p { font-size: 14px; color: #555; line-height: 1.82; margin-bottom: 14px; }
+.bullet-list { margin-top: 20px; display: flex; flex-direction: column; gap: 10px; }
+.bullet-row { display: flex; gap: 12px; align-items: flex-start; }
+.bullet-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 8px; }
+.bullet-row span { font-size: 13px; color: #444; line-height: 1.65; }
+.tc-image {
+  /* Replace with: background: url('your-image.jpg') center/cover no-repeat; */
+  background: url('https://acr.iitbombay.org/wp-content/uploads/2022/12/1600x640_Giving-Back-Banner-scaled.webp') center/cover no-repeat;
+  min-height: 400px;
+  position: relative;
+}
+.tc-image-overlay { position: absolute; inset: 0; background: rgba(8,16,40,0.28); }
+
+/* ── SAMPLE LANGUAGE ── */
+.lang-section { background: var(--navy); padding: 60px; }
+.lang-section .sec-eyebrow { color: var(--gold); }
+.lang-section .sec-heading { color: #fff; margin-bottom: 6px; }
+.lang-note { font-size: 12px; color: rgba(255,255,255,0.38); margin-bottom: 32px; font-style: italic; }
+.lang-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.lang-box { border: 1px solid rgba(196,157,68,0.22); padding: 26px; border-radius: 2px; }
+.lang-box .lb-tag { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 12px; display: block; }
+.lang-box p { font-size: 13px; color: rgba(255,255,255,0.7); line-height: 1.82; font-style: italic; }
+
+/* ── RECOGNITION WITH IMAGE CARDS ── */
+.recog-section { padding: 64px 60px; background: var(--parchment); }
+.recog-intro { font-size: 14px; color: #666; line-height: 1.75; max-width: 640px; margin-bottom: 40px; }
+.recog-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.recog-cards { display: flex; flex-direction: column; gap: 18px; }
+/* Chairman's Circle-style card */
+.img-card { background: #fff; border: 1px solid #e8e8e8; overflow: hidden; display: flex; }
+.img-card-photo {
+  width: 120px;
+  flex-shrink: 0;
+  /* Replace with: background: url('donor-photo.jpg') center/cover no-repeat; */
+  background: linear-gradient(135deg, var(--navy), #1a4a7a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+}
+.img-card-photo .photo-label { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; color: rgba(196,157,68,0.6); text-align: center; padding: 8px; line-height: 1.5; }
+.img-card-body { padding: 20px 22px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.img-card-body h3 { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 7px; }
+.img-card-body p { font-size: 12px; color: #666; line-height: 1.65; margin-bottom: 10px; }
+.img-card-meta { display: flex; flex-direction: column; gap: 2px; }
+.img-card-meta span { font-size: 11px; color: #999; }
+.img-card-link { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; color: var(--gold); font-weight: 600; text-decoration: none; margin-top: 10px; }
+.recog-right { display: flex; flex-direction: column; }
+.recog-points { display: flex; flex-direction: column; }
+.rp-item { padding: 16px 0; border-bottom: 1px solid var(--border); display: flex; gap: 14px; align-items: flex-start; }
+.rp-dot { width: 6px; height: 6px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 8px; }
+.rp-item span { font-size: 13px; color: #444; line-height: 1.65; }
+.heritage-bar { margin-top: 28px; background: var(--navy); padding: 26px 32px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.heritage-bar p { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.6; max-width: 360px; }
+.heritage-bar p strong { color: var(--gold); }
+.heritage-btn { background: var(--gold); color: var(--navy); font-size: 12px; font-weight: 600; padding: 11px 22px; border-radius: 2px; white-space: nowrap; text-decoration: none; display: inline-block; letter-spacing: 0.3px; }
+
+/* ── FAQ ACCORDION ── */
+.faq-section { padding: 64px 60px; background: #fff; }
+.faq-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 68px; margin-top: 36px; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-trigger { width: 100%; background: none; border: none; padding: 18px 0; display: flex; align-items: center; justify-content: space-between; cursor: pointer; text-align: left; gap: 12px; }
+.faq-trigger .fq-text { font-size: 13px; font-weight: 500; color: var(--navy); line-height: 1.4; }
+.faq-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--parchment); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: background 0.2s, border-color 0.2s; }
+.faq-icon svg { width: 10px; height: 10px; transition: transform 0.25s; }
+.faq-trigger[aria-expanded="true"] .faq-icon { background: var(--gold); border-color: var(--gold); }
+.faq-trigger[aria-expanded="true"] .faq-icon svg { transform: rotate(45deg); }
+.faq-trigger[aria-expanded="true"] .faq-icon svg path { stroke: var(--navy); }
+.faq-body { max-height: 0; overflow: hidden; transition: max-height 0.32s ease; }
+.faq-body.open { max-height: 200px; }
+.faq-body p { font-size: 13px; color: #777; line-height: 1.72; padding: 0 0 18px; }
+
+/* ── CTA ── */
+.cta-section { background: var(--parchment); border-top: 3px solid var(--gold); padding: 64px 60px; display: flex; align-items: center; justify-content: space-between; gap: 48px; }
+.cta-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--navy); line-height: 1.3; max-width: 480px; }
+.cta-section h2 em { font-style: italic; color: var(--gold); }
+.cta-section .cta-contact { font-size: 13px; color: #888; margin-top: 12px; }
+.cta-section .cta-contact a { color: var(--navy); text-decoration: none; font-weight: 500; }
+.cta-btns { display: flex; flex-direction: column; gap: 14px; min-width: 210px; }
+.btn-navy { background: var(--navy); color: #fff; font-size: 13px; font-weight: 500; padding: 14px 30px; border-radius: 2px; text-align: center; text-decoration: none; display: block; letter-spacing: 0.3px; }
+.btn-navy:hover { background: #0f2550; }
+.btn-gold-outline { border: 1.5px solid var(--gold); color: var(--gold-muted); font-size: 13px; font-weight: 400; padding: 13px 30px; border-radius: 2px; text-align: center; text-decoration: none; display: block; background: transparent; }
+
+/* ── FOOTER ── */
+.site-footer { background: #081330; padding: 36px 60px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+.site-footer p { font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.7; }
+.footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+.footer-links a { font-size: 11px; color: rgba(255,255,255,0.3); text-decoration: none; }
+.footer-links a:hover { color: rgba(196,157,68,0.6); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  .nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .breadcrumb { padding: 9px 20px; }
+  .hero-content { padding: 0 20px 48px; }
+  .hero-content h1 { font-size: 38px; }
+  .stats-strip { padding: 32px 20px; grid-template-columns: 1fr; gap: 24px; }
+  .stats-left { border-right: none; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+  .stats-right { padding-left: 0; padding-top: 20px; }
+  .quote-band { grid-template-columns: 1fr; }
+  .ways-section { padding: 48px 20px; }
+  .ways-grid { grid-template-columns: 1fr 1fr; }
+  .way-card { border-bottom: 1px solid var(--border); }
+  .img-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: auto; height: auto; }
+  .mosaic-cell.tall { grid-row: auto; min-height: 160px; }
+  .mosaic-cell { min-height: 140px; }
+  .two-col { grid-template-columns: 1fr; }
+  .tc-image { min-height: 260px; }
+  .lang-section { padding: 48px 20px; }
+  .lang-grid { grid-template-columns: 1fr; }
+  .recog-section { padding: 48px 20px; }
+  .recog-layout { grid-template-columns: 1fr; }
+  .img-card-photo { width: 100px; }
+  .faq-section { padding: 48px 20px; }
+  .faq-cols { grid-template-columns: 1fr; gap: 0; }
+  .cta-section { padding: 48px 20px; flex-direction: column; align-items: flex-start; }
+  .site-footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-brand">
+    <img src="./assets/logo.svg" alt="IIT Bombay" onerror="this.style.display=&#39;none&#39;">
+    <div class="nav-brand-text">Indian Institute of Technology Bombay<span>Alumni &amp; Corporate Relations</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="https://acr.iitbombay.org/about/">About</a>
+    <a href="https://acr.iitbombay.org/stay-connected/">Alumni Corner</a>
+    <a href="https://acr.iitbombay.org/donor-wall/">Donor Wall</a>
+    <a href="https://acr.iitbombay.org/batch-legacy/">Batch Legacy</a>
+    <a href="https://acr.iitbombay.org/giving-back/">Giving Back</a>
+    <a href="https://acr.iitbombay.org/events/upcoming-events/">Events</a>
+    <a href="https://acr.iitbombay.org/resources/news/">Resources</a>
+  </div>
+  <a href="https://acr.iitbombay.org/giving-back/" class="nav-give">Giving Back</a>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="https://acr.iitbombay.org/">Home</a> ›
+  <a href="https://acr.iitbombay.org/giving-back/">Giving Back</a> ›
+  Living Legacy
+</div>
+
+<!-- HERO -->
+<!-- IMAGE NOTE: Replace .hero-bg background-image URL with your campus hero photo (recommended: 1600×640px, webp) -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">IIT Bombay · Living Legacy Programme</span>
+    <h1>A gift that reaches<br>minds you may<br><em>never meet.</em></h1>
+    <p>Designate IIT Bombay in your will, trust or estate plan — and extend the arc of your own journey into the future.</p>
+    <a href="mailto:livinglegacy@iitbacr.com" class="hero-btn">Begin your legacy →</a>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-left">
+    <h3>Living Legacy — <em>at a glance</em></h3>
+    <p>No minimum gift. Every legacy matters.</p>
+  </div>
+  <div class="stats-right">
+    <div class="stat-item"><span class="stat-num">₹0</span><span class="stat-label">Minimum — every size counts</span></div>
+    <div class="stat-item"><span class="stat-num">501c3</span><span class="stat-label">US tax-deductible via IITBHF</span></div>
+    <div class="stat-item"><span class="stat-num">5</span><span class="stat-label">Ways to give your legacy</span></div>
+    <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">All conversations confidential</span></div>
+  </div>
+</div>
+
+<!-- DIRECTOR QUOTE -->
+<section class="quote-band">
+  <div class="quote-left">
+    <div class="ql-label">Director's message</div>
+    <div class="ql-name">Prof. Shireesh Kedare</div>
+    <div class="ql-title">Director,<br>Indian Institute of<br>Technology Bombay</div>
+  </div>
+  <div class="quote-right">
+    <blockquote>"When you choose to leave a legacy to IIT Bombay, you are not simply making a gift — you are extending the arc of your own journey. You are investing in minds you may never meet, discoveries yet to be imagined, and a future shaped by courage, curiosity and compassion."</blockquote>
+  </div>
+</section>
+
+<!-- WAYS OF GIVING -->
+<section class="ways-section">
+  <span class="sec-eyebrow">Ways of giving</span>
+  <div class="sec-heading">Five ways to shape the future</div>
+  <p class="ways-intro">You may name IIT Bombay or the IIT Bombay Heritage Foundation as a beneficiary through any of the following instruments. No gift is too large. No gift is too modest.</p>
+  <div class="ways-grid">
+    <div class="way-card"><span class="way-num">01</span><h3>Bequest in your Will</h3><p>Name IITB or IITBHF directly in your will or estate plan.</p><a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="way-link">Learn more →</a></div>
+    <div class="way-card"><span class="way-num">02</span><h3>Trust / Estate Plan</h3><p>Designate IITB through a revocable living trust or estate arrangement.</p><a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="way-link">Learn more →</a></div>
+    <div class="way-card"><span class="way-num">03</span><h3>IRA / Retirement Account</h3><p>Name IITB via Qualified Charitable Distribution where applicable.</p><a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="way-link">Learn more →</a></div>
+    <div class="way-card"><span class="way-num">04</span><h3>Life Insurance Policy</h3><p>Designate as full or partial beneficiary of a life insurance policy.</p><a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="way-link">Learn more →</a></div>
+    <div class="way-card"><span class="way-num">05</span><h3>Retirement Account</h3><p>Name IIT Bombay as beneficiary of your pension or retirement fund.</p><a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="way-link">Learn more →</a></div>
+  </div>
+</section>
+
+<!-- CAMPUS IMAGE MOSAIC -->
+<!-- IMAGE NOTE: Replace each .mosaic-cell background with campus photos. Recommended sizes: tall cell 800×760px, others 400×380px -->
+<div class="img-mosaic">
+  <div class="mosaic-cell c1 tall">
+    <!-- background: url('campus-aerial.jpg') center/cover no-repeat; -->
+    <div class="mosaic-overlay"></div>
+    <div class="mosaic-label">IIT Bombay Campus</div>
+  </div>
+  <div class="mosaic-cell c2">
+    <!-- background: url('research-lab.jpg') center/cover no-repeat; -->
+    <div class="mosaic-overlay"></div>
+    <div class="mosaic-label">Research</div>
+  </div>
+  <div class="mosaic-cell c3">
+    <!-- background: url('convocation.jpg') center/cover no-repeat; -->
+    <div class="mosaic-overlay"></div>
+    <div class="mosaic-label">Student Life</div>
+  </div>
+  <div class="mosaic-cell c4">
+    <!-- background: url('students-outdoors.jpg') center/cover no-repeat; -->
+    <div class="mosaic-overlay"></div>
+    <div class="mosaic-label">Alumni</div>
+  </div>
+  <div class="mosaic-cell c5">
+    <!-- background: url('campus-landmark.jpg') center/cover no-repeat; -->
+    <div class="mosaic-overlay"></div>
+    <div class="mosaic-label">Infrastructure</div>
+  </div>
+</div>
+
+<!-- PURPOSE + IMAGE -->
+<div class="two-col">
+  <div class="tc-text">
+    <span class="sec-eyebrow">Your legacy in action</span>
+    <div class="sec-heading">Breakthroughs the world needs, never held back.</div>
+    <p>IIT Bombay drives critical research, launches enterprises of global consequence, and advances urgent frontiers like climate science, artificial intelligence, and public health.</p>
+    <p>Your legacy ensures the research continues, the questions keep being asked, and the next generation of thinkers has the support they need.</p>
+    <div class="bullet-list">
+      <div class="bullet-row"><div class="bullet-dot"></div><span>Scholarships for the next generation of innovators</span></div>
+      <div class="bullet-row"><div class="bullet-dot"></div><span>Fund research on urgent global challenges</span></div>
+      <div class="bullet-row"><div class="bullet-dot"></div><span>Strengthen infrastructure and student welfare on campus</span></div>
+      <div class="bullet-row"><div class="bullet-dot"></div><span>Leave your gift unrestricted for greatest impact</span></div>
+    </div>
+  </div>
+  <!-- IMAGE NOTE: Replace .tc-image background with director portrait or campus photo (recommended: 800×800px) -->
+  <div class="tc-image">
+    <div class="tc-image-overlay"></div>
+  </div>
+</div>
+
+<!-- SAMPLE BEQUEST LANGUAGE -->
+<section class="lang-section">
+  <span class="sec-eyebrow">Sample bequest language</span>
+  <div class="sec-heading">Words to guide your advisor conversation</div>
+  <p class="lang-note">For guidance only — not intended as legal, financial or tax advice. Please consult your attorney.</p>
+  <div class="lang-grid">
+    <div class="lang-box">
+      <span class="lb-tag">For US donors</span>
+      <p>"I give [all of the residue of my estate / an amount equal to X% / USD ___________] to IIT Bombay through IIT Bombay Heritage Foundation, a qualified 501(c)(3) nonprofit organization registered in the State of California, Tax ID 77-0428724, for its general educational and research purposes."</p>
+    </div>
+    <div class="lang-box">
+      <span class="lb-tag">For India donors</span>
+      <p>"I give [all of the residue of my estate / an amount equal to X% / INR ___________] to IIT Bombay, for its general educational and research purposes."</p>
+    </div>
+  </div>
+</section>
+
+<!-- RECOGNITION WITH IMAGE CARDS -->
+<section class="recog-section">
+  <span class="sec-eyebrow">Recognition &amp; stewardship</span>
+  <div class="sec-heading">Your legacy, honoured.</div>
+  <p class="recog-intro">As a Living Legacy donor, you will be recognised and celebrated by IIT Bombay. Below are placeholder examples of how donors are featured — your story and photo will be showcased in a similar way.</p>
+  <div class="recog-layout">
+    <div class="recog-cards">
+      <!-- IMAGE NOTE: Replace .img-card-photo background with donor portrait (recommended: 120×150px, portrait orientation) -->
+      <div class="img-card">
+        <div class="img-card-photo">
+          <!-- background: url('donor-1-photo.jpg') center/cover no-repeat; -->
+          <div class="photo-label">Donor photo<br>300×400px</div>
+        </div>
+        <div class="img-card-body">
+          <div>
+            <h3>Legacy Donor Name</h3>
+            <p>A brief description of the donor's connection to IIT Bombay and the lasting impact of their planned gift on the institute's future generations.</p>
+            <div class="img-card-meta">
+              <span>B. Tech. · 1985</span>
+              <span>Electrical Engineering</span>
+            </div>
+          </div>
+          <a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="img-card-link">Read More →</a>
+        </div>
+      </div>
+      <div class="img-card">
+        <div class="img-card-photo">
+          <!-- background: url('donor-2-photo.jpg') center/cover no-repeat; -->
+          <div class="photo-label">Donor photo<br>300×400px</div>
+        </div>
+        <div class="img-card-body">
+          <div>
+            <h3>Legacy Donor Name</h3>
+            <p>A brief description of the donor's connection to IIT Bombay and the enduring impact their bequest will create for future innovators and researchers.</p>
+            <div class="img-card-meta">
+              <span>M. Tech. · 1992</span>
+              <span>Computer Science &amp; Engineering</span>
+            </div>
+          </div>
+          <a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="img-card-link">Read More →</a>
+        </div>
+      </div>
+    </div>
+    <div class="recog-right">
+      <div class="recog-points">
+        <div class="rp-item"><div class="rp-dot"></div><span>Acknowledged through appropriate Institute platforms within the IIT Bombay community, with your consent</span></div>
+        <div class="rp-item"><div class="rp-dot"></div><span>Naming opportunities for chairs, programmes, labs or facilities considered based on realised gift value</span></div>
+        <div class="rp-item"><div class="rp-dot"></div><span>Donor intent upheld with strong governance and long-term stewardship frameworks</span></div>
+        <div class="rp-item"><div class="rp-dot"></div><span>Regular updates and full transparency on how your funds are directed and used</span></div>
+      </div>
+      <div class="heritage-bar">
+        <p><strong>Heritage Circle:</strong> Upon joining, you will be welcomed as a member of IIT Bombay's Heritage Circle.</p>
+        <a href="mailto:livinglegacy@iitbacr.com" class="heritage-btn">Join Heritage Circle</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ ACCORDION -->
+<section class="faq-section">
+  <span class="sec-eyebrow">Questions &amp; answers</span>
+  <div class="sec-heading">Frequently asked questions</div>
+  <div class="faq-cols">
+    <div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Is there a minimum legacy gift amount?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>There is no minimum amount. Every legacy gift, regardless of size, contributes meaningfully to IIT Bombay's long-term future.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Can I keep my intention confidential?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>Absolutely. If you prefer, your bequest can remain entirely confidential. We will respect your wishes regarding recognition and privacy completely.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Can I revise my bequest in the future?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>Yes. A bequest is revocable and can be modified at any time by simply updating your will.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Do I need legal assistance to include a bequest?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>We recommend working with a legal advisor to ensure your bequest reflects your intentions clearly and accurately.</p></div>
+      </div>
+    </div>
+    <div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">What types of assets can I include?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>Cash, securities, property or other assets. We recommend discussing your plans with your advisor to determine what works best for your situation.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Can I specify how my gift is used?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>Yes — scholarships, research, hostels, infrastructure, or leave it unrestricted. Our team will work with you to align the gift with your stated intentions.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">How does tax treatment work?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>Tax benefits depend on your country of residence. We recommend consulting your legal or financial advisor for guidance specific to your situation.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false"><span class="fq-text">Can I speak to someone before deciding?</span><span class="faq-icon"><svg viewBox="0 0 10 10" fill="none"><path d="M5 2v6M2 5h6" stroke="#0d1f4a" stroke-width="1.5" stroke-linecap="round"></path></svg></span></button>
+        <div class="faq-body"><p>Yes. Our team would be happy to have a confidential conversation — no obligation, your timeline, your terms entirely.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FOOTER -->
+<section class="cta-section">
+  <div>
+    <h2>All conversations are <em>strictly confidential.</em><br>No obligation. Your timeline, your terms.</h2>
+    <p class="cta-contact">
+      <a href="mailto:livinglegacy@iitbacr.com">livinglegacy@iitbacr.com</a> &nbsp;·&nbsp;
+      <a href="mailto:hfoffice-group@iitbombay.org">hfoffice-group@iitbombay.org</a>
+    </p>
+  </div>
+  <div class="cta-btns">
+    <a href="mailto:livinglegacy@iitbacr.com" class="btn-navy">Contact our team</a>
+    <a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#" class="btn-gold-outline">Download brochure</a>
+  </div>
+</section>
+
+<!-- SITE FOOTER -->
+<footer class="site-footer">
+  <p>© 2026 Indian Institute of Technology Bombay<br>Alumni &amp; Corporate Relations · <a href="https://acr.iitbombay.org/" style="color:rgba(196,157,68,0.5);text-decoration:none;">acr.iitbombay.org</a></p>
+  <div class="footer-links">
+    <a href="https://acr.iitbombay.org/giving-back/">Giving Back</a>
+    <a href="https://acr.iitbombay.org/ways-of-giving/">Ways of Giving</a>
+    <a href="https://acr.iitbombay.org/donor-wall/">Donor Wall</a>
+    <a href="https://acr.iitbombay.org/chairmans-circle/">Chairman's Circle</a>
+    <a href="file:///Users/mbpro16/Library/Containers/net.whatsapp.WhatsApp/Data/tmp/documents/42B9E5A2-9455-46A8-84A1-3A71915F0873/Living%20Legacy%20Programme%20%E2%80%94%20IIT%20Bombay%20_%20Option%20A_%20Gold%20&amp;%20Navy.html#">Contact Us</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-trigger').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var body = btn.nextElementSibling;
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.faq-trigger').forEach(function(b) {
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+      if (!isOpen) {
+        btn.setAttribute('aria-expanded', 'true');
+        body.classList.add('open');
+      }
+    });
+  });
+</script>
+
+
+</body></html>
