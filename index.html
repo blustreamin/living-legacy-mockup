@@ -7,7 +7,7 @@
 <title>Living Legacy Programme — IIT Bombay | A journey that transcends time</title>
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="./assets/fonts.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -26,8 +26,8 @@
   --text-dark: #1a2744;
   --text-mid: #3d4f6b;
   --text-light: #5a6a85;
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --sans: 'Jost', -apple-system, BlinkMacSystemFont, sans-serif;
+  --serif: 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --sans: 'Google Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -37,6 +37,16 @@ body {
   -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
   font-feature-settings: 'kern' 1, 'liga' 1; overflow-x: hidden;
 }
+
+/* Inter tuning: tighten letter-spacing for large display text, ensure italic falls back to roman+style */
+.display-h, .hero h1, .stats-left h3, .stat-num, .ql-name,
+.bc-lead, .si-text, .way-title, .heritage-text p,
+.begin-text h2, .sample-popup h3, .quote-right blockquote {
+  letter-spacing: -0.02em;
+}
+.hero h1 { letter-spacing: -0.035em; }
+/* Inter doesn't have a true italic that reads "elegant" — pair italic with the gold accent so it still feels intentional */
+em { font-style: italic; }
 ::selection { background: var(--gold); color: var(--navy); }
 a { color: inherit; }
 
@@ -123,17 +133,11 @@ a { color: inherit; }
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background: url('https://acr.iitbombay.org/wp-content/uploads/2022/12/1600x640_Giving-Back-Banner-scaled.webp') center/cover no-repeat;
-  transform: scale(1.06);
-  animation: kenburns 22s ease-in-out infinite alternate;
-}
-@keyframes kenburns {
-  0% { transform: scale(1.06) translate(0, 0); }
-  100% { transform: scale(1.14) translate(-2%, -2%); }
+  background: url('./assets/hero-campus.jpeg') center/cover no-repeat;
 }
 .hero-image-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(5,13,36,0.35), rgba(5,13,36,0.1));
+  background: linear-gradient(135deg, rgba(5,13,36,0.15), rgba(5,13,36,0.0) 50%, rgba(196,157,68,0.05));
 }
 .hero-image-tag {
   position: absolute; left: 32px; bottom: 32px; z-index: 2;
@@ -154,11 +158,11 @@ a { color: inherit; }
 }
 .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
 .hero h1 {
-  font-family: var(--serif); font-weight: 200; color: var(--navy);
+  font-family: var(--serif); font-weight: 300; color: var(--navy);
   font-size: clamp(48px, 6vw, 84px); line-height: 1.0;
   letter-spacing: -0.025em; margin-bottom: 32px;
 }
-.hero h1 em { font-style: italic; color: var(--gold); font-weight: 300; }
+.hero h1 em { font-style: italic; color: var(--gold); font-weight: 400; }
 .hero p {
   font-size: 17px; font-weight: 300; color: var(--text-mid);
   line-height: 1.78; margin-bottom: 40px; max-width: 520px;
@@ -644,7 +648,7 @@ a { color: inherit; }
   <div class="hero-image">
     <div class="hero-bg"></div>
     <div class="hero-image-overlay"></div>
-    <div class="hero-image-tag">First image — to be replaced</div>
+    <div class="hero-image-tag">IIT Bombay · Campus</div>
   </div>
   <div class="hero-content">
     <span class="hero-eyebrow">Living Legacy Programme · IIT Bombay</span>
